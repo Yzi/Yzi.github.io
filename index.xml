@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yzi Blog</title>
+    <link>https://Yzi.io/</link>
+    <description>Recent content on Yzi Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Copyright © 2020, Yzi.</copyright><atom:link href="https://Yzi.io/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
