@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Yzi Blog</title>
-    <link>https://Yzi.io/blog/</link>
-    <description>Recent content in Blog on Yzi Blog</description>
+    <title>HomeLab on Yzi Blog</title>
+    <link>https://Yzi.io/blog/homelab/</link>
+    <description>Recent content in HomeLab on Yzi Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Copyright © 2020, Yzi.</copyright>
-    <lastBuildDate>Sat, 14 Nov 2020 18:15:23 +0800</lastBuildDate><atom:link href="https://Yzi.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Nov 2020 18:15:23 +0800</lastBuildDate><atom:link href="https://Yzi.io/blog/homelab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HomeLab and Network 家庭实验室和网络</title>
       <link>https://Yzi.io/homelab-and-network-%E5%AE%B6%E5%BA%AD%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%92%8C%E7%BD%91%E7%BB%9C/</link>
@@ -22,17 +22,6 @@
 EdgeRouter X
  DNS -&amp;gt; Adguard Home UPnP  群晖 DS718+
  DDNS OpenVPN Server Active Backup for Business -&amp;gt; 备份 ESXi Docker  Adguard Home -&amp;gt; DoH Aria2 Clash MySQL Docker Registry    ESXi J3455-ITX</description>
-    </item>
-    
-    <item>
-      <title>关于博客的碎碎念</title>
-      <link>https://Yzi.io/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link>
-      <pubDate>Sat, 07 Nov 2020 23:32:25 +0800</pubDate>
-      
-      <guid>https://Yzi.io/%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5/</guid>
-      <description>关于博客的碎碎念，记录下搭建的过程，后续有变更也会在这更新.
-这个域名已经买来好久了，一直拖了很久。前几天浏览别人博客时，羡慕的心情又冒了出来，终于鼓起动力开始搭建。
- Hugo 主题 Hugo ʕ•ᴥ•ʔ Bear（PS：在网页底部应该能找到） 托管 Github Page 域名解析 Cloudflare  主分支放渲染好的网页，另一个分支则用来管理博客，下一步计划是加上 Google Analytics。</description>
     </item>
     
   </channel>
