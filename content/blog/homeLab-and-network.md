@@ -2,6 +2,7 @@
 title = "HomeLab and Network 家庭实验室和网络"
 date = "2020-11-14T18:15:23+08:00"
 tags = ["HomeLab", "Network"]
+comments = true
 +++
 
 突然想起某样东西，然后又突然把它忘了的情况，最近发生了很多次。部署的设备和软件已经不少，在这里记录一下，供自己翻阅。

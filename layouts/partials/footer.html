@@ -7,6 +7,7 @@
   gtag('config', 'UA-183049007-1');
 </script>
 
+{{ with .Params.comments }}
 <div id="disqus_thread"></div>
 <script>
 
@@ -27,5 +28,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{{ end }}
 
 {{ if ne .Site.Params.hideMadeWithLine true }}Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>{{ end }}
