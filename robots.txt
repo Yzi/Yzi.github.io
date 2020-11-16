@@ -1,2 +1,1 @@
-User-Agent: *
-Sitemap: https://Yzi.io/sitemap.xml
+User-agent: *
