@@ -10,6 +10,9 @@ author = "Yzi"
 copyright = "Copyright © 2020, Yzi."
 languageCode = "zh"
 
+# Provide your tracking id in your configuration file
+googleAnalytics = "UA-183049007-1"
+
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
 
