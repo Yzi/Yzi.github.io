@@ -19,9 +19,11 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
+        submodules: true 
+        fetch-depth: 0
         hugo-version: latest
 
-    - name: Build local ./exampleSite
+    - name: Build local
       run: hugo --minify --gc
 
     - name: Deploy to GitHub Pages
