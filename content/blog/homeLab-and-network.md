@@ -7,7 +7,7 @@ comments = true
 
 突然想起某样东西，然后又突然把它忘了的情况，最近发生了很多次。部署的设备和软件已经不少，在这里记录一下，供自己翻阅。
 
-![](/images/20201114195243.png)
+![](https://i.v2ex.co/inFZ6enN.png)
 
 群晖安装的硬盘是希捷监控盘 4T x 2 SHR RAID1，防止断电使用的是 APC UPS BK650M2-CH，DDNS 和 OpenVPN Server 都用的群晖官方的，使用和维护很方便，有公网 IP，DDNS 搭配 UPnP 或者 QuickConnect 都很方便。
 
