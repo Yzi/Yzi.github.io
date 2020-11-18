@@ -1,10 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yzi Blog</title><link>https://Yzi.io/</link><description>Recent content on Yzi Blog</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>Copyright © 2020, Yzi.</copyright><lastBuildDate>Sat, 14 Nov 2020 18:15:23 +0800</lastBuildDate><atom:link href="https://Yzi.io/index.xml" rel="self" type="application/rss+xml"/><item><title>HomeLab and Network 家庭实验室和网络</title><link>https://Yzi.io/blog/homelab-and-network/</link><pubDate>Sat, 14 Nov 2020 18:15:23 +0800</pubDate><guid>https://Yzi.io/blog/homelab-and-network/</guid><description>突然想起某样东西，然后又突然把它忘了的情况，最近发生了很多次。部署的设备和软件已经不少，在这里记录一下，供自己翻阅。
-群晖安装的硬盘是希捷监控盘 4T x 2 SHR RAID1，防止断电使用的是 APC UPS BK650M2-CH，DDNS 和 OpenVPN Server 都用的群晖官方的，使用和维护很方便，有公网 IP，DDNS 搭配 UPnP 或者 QuickConnect 都很方便。
-在 ESXi上跑了 Ubuntu，学习 Kubernetes。通过 UPnP 把 API 映射在外网，相当于有了一台属于自己的 “云服务器”。
-主路由器用的 EdgeRouter X，把之前的几个无线路由当作 AP，家里有很多小米的设备，无线一直不太稳定，这是一个问题得想办法解决。
-代理通过自建出口，防止 IP 频繁变动，通过中转保护和优化线路，防止记录信息。
-EdgeRouter X
-DNS -&amp;gt; Adguard Home UPnP 群晖 DS718+
-DDNS OpenVPN Server Active Backup for Business -&amp;gt; 备份 ESXi Docker Adguard Home -&amp;gt; DoH Aria2 Clash MySQL Docker Registry ESXi J3455-ITX</description></item><item><title>关于博客的碎碎念</title><link>https://Yzi.io/blog/about/</link><pubDate>Sat, 07 Nov 2020 23:32:25 +0800</pubDate><guid>https://Yzi.io/blog/about/</guid><description>关于博客的碎碎念，记录下搭建的过程，后续有变更也会在这更新.
-这个域名已经买来好久了，一直拖了很久。前几天浏览别人博客时，羡慕的心情又冒了出来，终于鼓起动力开始搭建。
-Hugo 主题 Hugo ʕ•ᴥ•ʔ Bear（PS：在网页底部应该能找到） 托管 Github Page 域名解析 Cloudflare 主分支放渲染好的网页，另一个分支则用来管理博客，下一步计划是加上 Google Analytics。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yzi Blog</title><link>https://Yzi.io/</link><description>Recent content on Yzi Blog</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>Copyright © 2020, Yzi.</copyright><lastBuildDate>Sat, 14 Nov 2020 18:15:23 +0800</lastBuildDate><atom:link href="https://Yzi.io/index.xml" rel="self" type="application/rss+xml"/><item><title>HomeLab and Network 家庭实验室和网络</title><link>https://Yzi.io/blog/homelab-and-network/</link><pubDate>Sat, 14 Nov 2020 18:15:23 +0800</pubDate><guid>https://Yzi.io/blog/homelab-and-network/</guid><description>&lt;p>突然想起某样东西，然后又突然把它忘了的情况，最近发生了很多次。部署的设备和软件已经不少，在这里记录一下，供自己翻阅。&lt;/p>
+&lt;p>&lt;img src="https://i.v2ex.co/inFZ6enN.png" alt="">&lt;/p>
+&lt;p>群晖安装的硬盘是希捷监控盘 4T x 2 SHR RAID1，防止断电使用的是 APC UPS BK650M2-CH，DDNS 和 OpenVPN Server 都用的群晖官方的，使用和维护很方便，有公网 IP，DDNS 搭配 UPnP 或者 QuickConnect 都很方便。&lt;/p>
+&lt;p>在 ESXi上跑了 Ubuntu，学习 Kubernetes。通过 UPnP 把 API 映射在外网，相当于有了一台属于自己的 “云服务器”。&lt;/p>
+&lt;p>主路由器用的 EdgeRouter X，把之前的几个无线路由当作 AP，家里有很多小米的设备，无线一直不太稳定，这是一个问题得想办法解决。&lt;/p>
+&lt;p>代理通过自建出口，防止 IP 频繁变动，通过中转保护和优化线路，防止记录信息。&lt;/p>
+&lt;p>EdgeRouter X&lt;/p>
+&lt;ul>
+&lt;li>DNS -&amp;gt; Adguard Home&lt;/li>
+&lt;li>UPnP&lt;/li>
+&lt;/ul>
+&lt;p>群晖 DS718+&lt;/p>
+&lt;ul>
+&lt;li>DDNS&lt;/li>
+&lt;li>OpenVPN Server&lt;/li>
+&lt;li>Active Backup for Business -&amp;gt; 备份 ESXi&lt;/li>
+&lt;li>Docker
+&lt;ul>
+&lt;li>Adguard Home -&amp;gt; DoH&lt;/li>
+&lt;li>Aria2&lt;/li>
+&lt;li>Clash&lt;/li>
+&lt;li>MySQL&lt;/li>
+&lt;li>Docker Registry&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>ESXi J3455-ITX&lt;/p>
+&lt;ul>
+&lt;li>Ubuntu -&amp;gt; k3s KubeSphere&lt;/li>
+&lt;/ul>
+&lt;p>Mac&lt;/p>
+&lt;ul>
+&lt;li>Tunnelblick&lt;/li>
+&lt;li>ClashX&lt;/li>
+&lt;li>Synergy -&amp;gt; 多台电脑鼠标同步&lt;/li>
+&lt;li>Multipass -&amp;gt; 几分钟之内即可启动并运行虚拟机&lt;/li>
+&lt;/ul>
+&lt;p>IOS&lt;/p>
+&lt;ul>
+&lt;li>vSphere Mobile Client&lt;/li>
+&lt;li>Potatso Lite&lt;/li>
+&lt;li>Shadowrocket&lt;/li>
+&lt;li>OpenVPN Connect&lt;/li>
+&lt;/ul>
+&lt;p>代理&lt;/p>
+&lt;ul>
+&lt;li>Shadowsocks And v2ray-plugin -&amp;gt; 使用 Docker 部署&lt;/li>
+&lt;li>VPS
+&lt;ul>
+&lt;li>BandwagonHost LA 1C512M&lt;/li>
+&lt;li>阿里云轻量 HK 1C1G&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>流量转发
+&lt;ul>
+&lt;li>WikiHost&lt;/li>
+&lt;li>Cloudflare&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>关于博客的碎碎念</title><link>https://Yzi.io/blog/about/</link><pubDate>Sat, 07 Nov 2020 23:32:25 +0800</pubDate><guid>https://Yzi.io/blog/about/</guid><description>&lt;p>关于博客的碎碎念，记录下搭建的过程，后续有变更也会在这更新.&lt;/p>
+&lt;p>这个域名已经买来好久了，一直拖了很久。前几天浏览别人博客时，羡慕的心情又冒了出来，终于鼓起动力开始搭建。&lt;/p>
+&lt;ul>
+&lt;li>Hugo&lt;/li>
+&lt;li>主题 Hugo ʕ•ᴥ•ʔ Bear（PS：在网页底部应该能找到）&lt;/li>
+&lt;li>托管 Github Page&lt;/li>
+&lt;li>域名解析 Cloudflare&lt;/li>
+&lt;/ul>
+&lt;p>主分支放渲染好的网页，另一个分支则用来管理博客，下一步计划是加上 Google Analytics。&lt;/p></description></item></channel></rss>
