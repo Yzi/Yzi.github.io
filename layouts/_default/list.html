@@ -1,5 +1,13 @@
 {{ define "main" }}
 <content>
+  <br />
+  <input type="search" id="site-search" name="q" placeholder="Search the site..." size="40">
+  <button onclick="search()">搜索</button>
+  <script>
+      function search() {
+          window.open("https://www.google.com/search?q=" + document.getElementById("site-search").value + " site:Yzi.io", '_blank')
+      }
+  </script>
   {{ if .Data.Singular }}
   <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
   <small>
@@ -7,7 +15,7 @@
   </small>
   {{ end }}
   <ul class="blog-posts">
-    {{ range (.Paginate ( .Pages ) 15).Pages }}
+    {{ range (.Paginate ( .Pages ) 10).Pages }}
     <li>
       <span>
         <i>
