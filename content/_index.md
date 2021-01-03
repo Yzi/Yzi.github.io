@@ -1,3 +1,1 @@
-你好，我是 [Yzi](https://github.com/Yzi)，平平无奇。
-
-建立这个博客只是单纯想有一个博客而已。
+你好，我是 [Yzi](https://github.com/Yzi)。
