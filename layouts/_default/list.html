@@ -1,11 +1,14 @@
 {{ define "main" }}
 <content>
   <br />
-  <input type="search" id="site-search" name="q" placeholder="Search the site...">
-  <button onclick="search()">搜索</button>
+  <form onsubmit="return search()">
+    <input type="search" id="site-search" name="q" placeholder="Search the site...">
+    <button>搜索</button>
+  </form>
   <script>
       function search() {
-          window.open("https://www.google.com/search?q=" + document.getElementById("site-search").value + " site:Yzi.io", '_blank')
+          window.open("https://www.google.com/search?q=" + document.getElementById("site-search").value + " site:Yzi.io", '_blank');
+          return false;
       }
   </script>
   {{ if .Data.Singular }}
