@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yzi Blog</title><link>https://Yzi.io/</link><description>Recent content on Yzi Blog</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>Copyright © 2020, Yzi.</copyright><lastBuildDate>Sat, 02 Jan 2021 13:55:45 +0800</lastBuildDate><atom:link href="https://Yzi.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Cloud Init and Ubuntu Cloud Images With ESXi 家庭实验室的系统模板</title><link>https://Yzi.io/blog/cloud-init-and-ubuntu-cloud-images-with-esxi/</link><pubDate>Sat, 02 Jan 2021 13:55:45 +0800</pubDate><guid>https://Yzi.io/blog/cloud-init-and-ubuntu-cloud-images-with-esxi/</guid><description>&lt;p>需要一个干净的基本镜像，并且在几分钟之内即可启动并运行虚拟机，&lt;a href="https://multipass.run">Multipass&lt;/a> Mac 或 Windows 工作站上的迷你云，作为开发使用特别方便，但部署一个长期运行的服务器时，使用起来不太适合。&lt;/p>
-&lt;p>&lt;a href="https://cloud-images.ubuntu.com">Ubuntu Cloud Images&lt;/a> 是官方的Ubuntu映像，并且在镜像中集成了 &lt;a href="https://cloudinit.readthedocs.io">Cloud Init&lt;/a>，Cloud Init 是用于跨平台云实例初始化的行业标准，作为家庭实验室的系统模板最合适不过，实现磁盘开机时的自动扩容，只需配置：&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Yzi Blog</title><link>https://Yzi.io/</link><description>Recent content on Yzi Blog</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>Copyright © 2020, Yzi.</copyright><lastBuildDate>Sat, 02 Jan 2021 13:55:45 +0800</lastBuildDate><atom:link href="https://Yzi.io/index.xml" rel="self" type="application/rss+xml"/><item><title>ESXi 部署 Ubuntu Cloud Image</title><link>https://Yzi.io/blog/cloud-init-and-ubuntu-cloud-images-with-esxi/</link><pubDate>Sat, 02 Jan 2021 13:55:45 +0800</pubDate><guid>https://Yzi.io/blog/cloud-init-and-ubuntu-cloud-images-with-esxi/</guid><description>&lt;p>需要一个干净的基础镜像，并且在几分钟之内即可启动并运行虚拟机，&lt;a href="https://multipass.run">Multipass&lt;/a> Mac 或 Windows 工作站上的迷你云，作为开发使用特别方便，但部署一个长期运行的服务器时，使用起来不太适合。&lt;/p>
+&lt;p>&lt;a href="https://cloud-images.ubuntu.com">Ubuntu Cloud Images&lt;/a> 是官方的Ubuntu映像，并且在镜像中集成了 &lt;a href="https://cloudinit.readthedocs.io">Cloud Init&lt;/a>，Cloud Init 是用于跨平台云实例初始化的行业标准，作为基础镜像最合适不过，实现磁盘开机时的自动扩容，只需配置：&lt;/p>
 &lt;pre>&lt;code># cloud-config
 rowpart:
 mode: auto
@@ -14,66 +14,7 @@ devices: ['/']
 &lt;p>文章中有多种方式解决这个问题，因为只部署了单台 ESXi，所以此处选择手动注入的方式，参考 &lt;a href="https://www.virtuallyghetto.com/2014/06/an-alternate-way-to-inject-ovf-properties-when-deploying-virtual-appliances-directly-onto-esxi.html">An alternate way to inject OVF properties when deploying virtual appliances directly onto ESXi&lt;/a> ，这是在直接部署到 ESXi 时使 OVF 属性起作用的巧妙方法，使用手动注入的方式，对于需要密码的虚拟机，还需要在 guestinfo.ovfEnv 中公开纯文本密码，不建议使用该方法。&lt;/p>
 &lt;p>&lt;img src="https://i.v2ex.co/mPq8az2S.png" alt="">&lt;/p>
 &lt;p>到此，虚拟机启动完成，在控制台中，可以通过命令 &lt;code>vmtoolsd --cmd 'info-get guestinfo.ovfEnv'&lt;/code> 检查注入的 OVF 属性。&lt;/p>
-&lt;p>&lt;img src="https://i.v2ex.co/yxO92vVl.png" alt="">&lt;/p></description></item><item><title>HomeLab and Network 家庭实验室和网络</title><link>https://Yzi.io/blog/homelab-and-network/</link><pubDate>Sat, 14 Nov 2020 18:15:23 +0800</pubDate><guid>https://Yzi.io/blog/homelab-and-network/</guid><description>&lt;p>突然想起某样东西，然后又突然把它忘了的情况，最近发生了很多次。部署的设备和软件已经不少，在这里记录一下，供自己翻阅。&lt;/p>
-&lt;p>&lt;img src="https://i.v2ex.co/inFZ6enN.png" alt="">&lt;/p>
-&lt;p>群晖安装的硬盘是希捷监控盘 4T x 2 SHR RAID1，防止断电使用的是 APC UPS BK650M2-CH，DDNS 和 OpenVPN Server 都用的群晖官方的，使用和维护很方便，有公网 IP，DDNS 搭配 UPnP 或者 QuickConnect 都很方便。&lt;/p>
-&lt;p>在 ESXi上跑了 Ubuntu，学习 Kubernetes。通过 UPnP 把 API 映射在外网，相当于有了一台属于自己的 “云服务器”。&lt;/p>
-&lt;p>主路由器用的 EdgeRouter X，把之前的几个无线路由当作 AP，家里有很多小米的设备，无线一直不太稳定，这是一个问题得想办法解决。&lt;/p>
-&lt;p>代理通过自建出口，防止 IP 频繁变动，通过中转保护和优化线路，防止记录信息。&lt;/p>
-&lt;p>EdgeRouter X&lt;/p>
-&lt;ul>
-&lt;li>DNS -&amp;gt; Adguard Home&lt;/li>
-&lt;li>UPnP&lt;/li>
-&lt;/ul>
-&lt;p>群晖 DS718+&lt;/p>
-&lt;ul>
-&lt;li>DDNS&lt;/li>
-&lt;li>OpenVPN Server&lt;/li>
-&lt;li>Active Backup for Business -&amp;gt; 备份 ESXi&lt;/li>
-&lt;li>Docker
-&lt;ul>
-&lt;li>Adguard Home -&amp;gt; DoH&lt;/li>
-&lt;li>Aria2&lt;/li>
-&lt;li>Clash&lt;/li>
-&lt;li>MySQL&lt;/li>
-&lt;li>Docker Registry&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>ESXi J3455-ITX&lt;/p>
-&lt;ul>
-&lt;li>Ubuntu -&amp;gt; k3s KubeSphere&lt;/li>
-&lt;/ul>
-&lt;p>Mac&lt;/p>
-&lt;ul>
-&lt;li>Tunnelblick&lt;/li>
-&lt;li>ClashX&lt;/li>
-&lt;li>Synergy -&amp;gt; 多台电脑鼠标同步&lt;/li>
-&lt;li>Multipass -&amp;gt; 几分钟之内即可启动并运行虚拟机&lt;/li>
-&lt;/ul>
-&lt;p>IOS&lt;/p>
-&lt;ul>
-&lt;li>vSphere Mobile Client&lt;/li>
-&lt;li>Potatso Lite&lt;/li>
-&lt;li>Shadowrocket&lt;/li>
-&lt;li>OpenVPN Connect&lt;/li>
-&lt;/ul>
-&lt;p>代理&lt;/p>
-&lt;ul>
-&lt;li>Shadowsocks And v2ray-plugin -&amp;gt; 使用 Docker 部署&lt;/li>
-&lt;li>VPS
-&lt;ul>
-&lt;li>BandwagonHost LA 1C512M&lt;/li>
-&lt;li>阿里云轻量 HK 1C1G&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>流量转发
-&lt;ul>
-&lt;li>WikiHost&lt;/li>
-&lt;li>Cloudflare&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul></description></item><item><title>关于博客的碎碎念</title><link>https://Yzi.io/blog/about/</link><pubDate>Sat, 07 Nov 2020 23:32:25 +0800</pubDate><guid>https://Yzi.io/blog/about/</guid><description>&lt;p>关于博客的碎碎念，记录下搭建的过程，后续有变更也会在这更新. 这个域名已经买来好久了，一直拖了很久。&lt;/p>
+&lt;p>&lt;img src="https://i.v2ex.co/yxO92vVl.png" alt="">&lt;/p></description></item><item><title>关于博客的碎碎念</title><link>https://Yzi.io/blog/about/</link><pubDate>Sat, 07 Nov 2020 23:32:25 +0800</pubDate><guid>https://Yzi.io/blog/about/</guid><description>&lt;p>关于博客的碎碎念，记录下搭建的过程，后续有变更也会在这更新. 这个域名已经买来好久了，一直拖了很久。&lt;/p>
 &lt;ul>
 &lt;li>静态网站生成 Hugo&lt;/li>
 &lt;li>主题 Hugo ʕ•ᴥ•ʔ Bear（PS：在网页底部应该能找到）&lt;/li>
