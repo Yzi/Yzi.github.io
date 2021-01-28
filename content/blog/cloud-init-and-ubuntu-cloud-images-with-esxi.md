@@ -1,13 +1,13 @@
 +++
-title = "Cloud Init and Ubuntu Cloud Images With ESXi 家庭实验室的系统模板"
+title = "ESXi 部署 Ubuntu Cloud Image"
 date = "2021-01-02T13:55:45+08:00"
 tags = ["HomeLab","ESXi"]
 comments = true
 +++
 
-需要一个干净的基本镜像，并且在几分钟之内即可启动并运行虚拟机，[Multipass](https://multipass.run) Mac 或 Windows 工作站上的迷你云，作为开发使用特别方便，但部署一个长期运行的服务器时，使用起来不太适合。
+需要一个干净的基础镜像，并且在几分钟之内即可启动并运行虚拟机，[Multipass](https://multipass.run) Mac 或 Windows 工作站上的迷你云，作为开发使用特别方便，但部署一个长期运行的服务器时，使用起来不太适合。
 
-[Ubuntu Cloud Images](https://cloud-images.ubuntu.com) 是官方的Ubuntu映像，并且在镜像中集成了 [Cloud Init](https://cloudinit.readthedocs.io)，Cloud Init 是用于跨平台云实例初始化的行业标准，作为家庭实验室的系统模板最合适不过，实现磁盘开机时的自动扩容，只需配置：
+[Ubuntu Cloud Images](https://cloud-images.ubuntu.com) 是官方的Ubuntu映像，并且在镜像中集成了 [Cloud Init](https://cloudinit.readthedocs.io)，Cloud Init 是用于跨平台云实例初始化的行业标准，作为基础镜像最合适不过，实现磁盘开机时的自动扩容，只需配置：
 
 ```
 # cloud-config
