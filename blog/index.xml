@@ -14,12 +14,4 @@ devices: ['/']
 &lt;p>文章中有多种方式解决这个问题，因为只部署了单台 ESXi，所以此处选择手动注入的方式，参考 &lt;a href="https://www.virtuallyghetto.com/2014/06/an-alternate-way-to-inject-ovf-properties-when-deploying-virtual-appliances-directly-onto-esxi.html">An alternate way to inject OVF properties when deploying virtual appliances directly onto ESXi&lt;/a> ，这是在直接部署到 ESXi 时使 OVF 属性起作用的巧妙方法，使用手动注入的方式，对于需要密码的虚拟机，还需要在 guestinfo.ovfEnv 中公开纯文本密码，不建议使用该方法。&lt;/p>
 &lt;p>&lt;img src="https://i.v2ex.co/mPq8az2S.png" alt="">&lt;/p>
 &lt;p>到此，虚拟机启动完成，在控制台中，可以通过命令 &lt;code>vmtoolsd --cmd 'info-get guestinfo.ovfEnv'&lt;/code> 检查注入的 OVF 属性。&lt;/p>
-&lt;p>&lt;img src="https://i.v2ex.co/yxO92vVl.png" alt="">&lt;/p></description></item><item><title>关于博客的碎碎念</title><link>https://Yzi.io/blog/about/</link><pubDate>Sat, 07 Nov 2020 23:32:25 +0800</pubDate><guid>https://Yzi.io/blog/about/</guid><description>&lt;p>关于博客的碎碎念，记录下搭建的过程，后续有变更也会在这更新. 这个域名已经买来好久了，一直拖了很久。&lt;/p>
-&lt;ul>
-&lt;li>静态网站生成 Hugo&lt;/li>
-&lt;li>主题 Hugo ʕ•ᴥ•ʔ Bear（PS：在网页底部应该能找到）&lt;/li>
-&lt;li>托管 Github Page&lt;/li>
-&lt;li>域名解析 Cloudflare&lt;/li>
-&lt;li>文章搜索 Google&lt;/li>
-&lt;/ul>
-&lt;p>主分支放渲染好的网页，另一个分支则用来管理博客。&lt;del>下一步计划是加上 Google Analytics&lt;/del> 已加上。&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://i.v2ex.co/yxO92vVl.png" alt="">&lt;/p></description></item></channel></rss>
